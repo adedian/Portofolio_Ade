@@ -80,12 +80,9 @@ $ogImage         = asset('images/og-cover.jpg');
 <div class="noise-overlay" aria-hidden="true"></div>
 <div class="page-transition" aria-hidden="true"></div>
 
-<div class="cursor" aria-hidden="true"></div>
-<div class="cursor-ring" aria-hidden="true"><span class="cursor-ring__label"></span></div>
-
 <header class="navbar">
   <div class="container navbar__inner">
-    <a href="<?= base_url('/') ?>" class="navbar__logo" data-cursor="link" data-cursor-label="Home">
+    <a href="<?= base_url('/') ?>" class="navbar__logo">
       <span class="navbar__logo-mark">&lt;/&gt;</span>
       <span class="navbar__logo-text">Ade<span class="navbar__logo-dot">.</span></span>
     </a>
@@ -98,7 +95,7 @@ $ogImage         = asset('images/og-cover.jpg');
       <a href="<?= base_url('/#contact') ?>" class="navbar__link">Contact</a>
     </nav>
 
-    <a href="<?= base_url('/#contact') ?>" class="btn btn-gradient navbar__cta magnetic" data-cursor="link">
+    <a href="<?= base_url('/#contact') ?>" class="btn btn-gradient navbar__cta magnetic">
       Hire Me <span class="btn__arrow">&#8599;</span>
     </a>
 

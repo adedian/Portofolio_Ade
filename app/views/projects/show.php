@@ -7,7 +7,7 @@ $features = lines_to_array($project['features']);
 
 <section class="project-hero" style="padding-top: var(--space-32); padding-bottom: var(--space-16);">
   <div class="container">
-    <a href="<?= base_url('/#work') ?>" class="text-secondary mono" style="font-size:0.8125rem;" data-cursor="link">&larr; Back to work</a>
+    <a href="<?= base_url('/#work') ?>" class="text-secondary mono" style="font-size:0.8125rem;">&larr; Back to work</a>
 
     <div style="margin-top: var(--space-8); display:flex; gap: var(--space-16); flex-wrap:wrap; justify-content:space-between; align-items:flex-end;">
       <h1 class="section-title" style="max-width: 26ch; font-size: clamp(2.25rem, 6vw, 4rem);" data-reveal><?= e($project['title']) ?></h1>
@@ -126,7 +126,7 @@ $features = lines_to_array($project['features']);
 <?php if ($next): ?>
 <section class="hairline">
   <div class="container">
-    <a href="<?= base_url('projects/' . $next['slug']) ?>" class="project-row" style="grid-template-columns: 80px 1fr auto; border:none;" data-cursor="link" data-cursor-label="Next">
+    <a href="<?= base_url('projects/' . $next['slug']) ?>" class="project-row" style="grid-template-columns: 80px 1fr auto; border:none;">
       <div class="project-row__number">Next</div>
       <div class="project-row__title-group">
         <h3 class="project-row__title"><?= e($next['title']) ?></h3>

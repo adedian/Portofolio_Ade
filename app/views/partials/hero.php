@@ -24,10 +24,10 @@
       </p>
 
       <div class="hero__actions" data-reveal data-reveal-delay="280">
-        <a href="<?= base_url('/#work') ?>" class="btn btn-gradient magnetic" data-cursor="link">
+        <a href="<?= base_url('/#work') ?>" class="btn btn-gradient magnetic">
           View My Work <span class="btn__arrow">&#8599;</span>
         </a>
-        <a href="<?= base_url('/#contact') ?>" class="btn btn-outline magnetic" data-cursor="link">
+        <a href="<?= base_url('/#contact') ?>" class="btn btn-outline magnetic">
           Let's Talk
         </a>
       </div>
@@ -84,7 +84,7 @@
     </div>
   </div>
 
-  <a href="<?= base_url('/#about') ?>" class="hero__scroll" data-cursor="link" data-cursor-label="Scroll">
+  <a href="<?= base_url('/#about') ?>" class="hero__scroll">
     <span class="hero__scroll-line"></span>
     Scroll
   </a>

@@ -31,7 +31,7 @@ $filterLabels = [
       <?php foreach ($projects as $project): ?>
         <?php $tags = tags_to_array($project['technologies']); ?>
         <article class="project-card" data-group="<?= e($project['filter_group']) ?>" data-reveal>
-          <a href="<?= base_url('projects/' . $project['slug']) ?>" class="project-card__thumb" data-cursor="link" data-cursor-label="View">
+          <a href="<?= base_url('projects/' . $project['slug']) ?>" class="project-card__thumb">
             <span class="project-card__number"><?= e($project['number']) ?></span>
             <?php if (!empty($project['thumbnail'])): ?>
               <img src="<?= e($project['thumbnail']) ?>" alt="<?= e($project['title']) ?>" loading="lazy">
@@ -51,7 +51,7 @@ $filterLabels = [
               <?php endforeach; ?>
             </div>
 
-            <a href="<?= base_url('projects/' . $project['slug']) ?>" class="project-card__link" data-cursor="link" data-cursor-label="View">
+            <a href="<?= base_url('projects/' . $project['slug']) ?>" class="project-card__link">
               View Project <span class="project-row__cta-arrow">&#8599;</span>
             </a>
           </div>

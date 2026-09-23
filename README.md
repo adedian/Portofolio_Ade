@@ -135,11 +135,11 @@ guessed/generic image — no dependency on stock photography.
   `variables.css`), used across section labels, skill/tech chips, timeline dots and project tags
   so the page reads as colorful rather than monochrome, without going neon
 - **Type:** Space Grotesk (display/mono-ish accents) + Inter (body), max two families
-- **Motion:** CSS transitions/keyframes + `IntersectionObserver`-driven scroll reveals, a custom
-  cursor (desktop only), magnetic buttons, a project card grid, and a full project case-study
-  route per project (`/projects/{slug}`) — not a JS-only modal.
-- All animation respects `prefers-reduced-motion`, and the custom cursor is disabled on
-  coarse/touch pointers.
+- **Motion:** CSS transitions/keyframes + `IntersectionObserver`-driven scroll reveals, magnetic
+  buttons, a project card grid, and a full project case-study route per project
+  (`/projects/{slug}`) — not a JS-only modal. The site uses the browser's native cursor
+  throughout (no custom cursor overlay).
+- All animation respects `prefers-reduced-motion`.
 - The hero's "photo" is a monogram avatar (gradient circle + "AD"), not a stock photo — there is
   no real photo of Ade in this repo. Swap `.hero__avatar-blob` in
   `app/views/partials/hero.php` for a real `<img>` once one is available.

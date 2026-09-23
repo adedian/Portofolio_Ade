@@ -26,7 +26,7 @@ $academicTags = tags_to_array($academicProject['technologies']);
           assist human security monitoring, not replace it.
         </p>
         <div style="margin-top: var(--space-6);">
-          <a href="<?= base_url('projects/' . $academicProject['slug']) ?>" class="btn btn-outline magnetic" data-cursor="link">
+          <a href="<?= base_url('projects/' . $academicProject['slug']) ?>" class="btn btn-outline magnetic">
             View Case Study <span class="btn__arrow">&#8599;</span>
           </a>
         </div>

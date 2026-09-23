@@ -9,13 +9,13 @@
         </p>
 
         <div class="contact__links">
-          <a href="mailto:adesukmana000@gmail.com" class="contact__link" data-cursor="link" data-cursor-label="Email">
+          <a href="mailto:adesukmana000@gmail.com" class="contact__link">
             adesukmana000@gmail.com
           </a>
-          <a href="https://id.linkedin.com/in/ade-dian-sukmana" target="_blank" rel="noopener" class="contact__link" data-cursor="link" data-cursor-label="Open">
+          <a href="https://id.linkedin.com/in/ade-dian-sukmana" target="_blank" rel="noopener" class="contact__link">
             LinkedIn — Ade Dian Sukmana
           </a>
-          <a href="https://github.com/adedian" target="_blank" rel="noopener" class="contact__link" data-cursor="link" data-cursor-label="Open">
+          <a href="https://github.com/adedian" target="_blank" rel="noopener" class="contact__link">
             GitHub — @adedian
           </a>
         </div>

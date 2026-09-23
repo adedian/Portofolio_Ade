@@ -71,7 +71,6 @@
   --dur-slow: 800ms;
 
   /* ---- z-index scale ---- */
-  --z-cursor: 9999;
   --z-preloader: 9000;
   --z-nav: 500;
   --z-lightbox: 800;

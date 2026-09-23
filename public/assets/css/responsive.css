@@ -131,11 +131,6 @@
     flex-direction: column;
     align-items: flex-start;
   }
-
-  .cursor,
-  .cursor-ring {
-    display: none;
-  }
 }
 
 /* ==================================================

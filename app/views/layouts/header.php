@@ -29,7 +29,7 @@ $ogImage         = asset('images/og-cover.jpg');
 <meta name="twitter:description" content="<?= e($pageDescription) ?>">
 <meta name="twitter:image" content="<?= e($ogImage) ?>">
 
-<meta name="theme-color" content="#050505">
+<meta name="theme-color" content="#07070f">
 <link rel="icon" href="<?= asset('icons/favicon.svg') ?>" type="image/svg+xml">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,8 +85,8 @@ $ogImage         = asset('images/og-cover.jpg');
 <header class="navbar">
   <div class="container navbar__inner">
     <a href="<?= base_url('/') ?>" class="navbar__logo" data-cursor="link" data-cursor-label="Home">
-      <span class="navbar__logo-mark">AD</span>
-      <span class="navbar__logo-text sr-only">Ade Dian Sukmana</span>
+      <span class="navbar__logo-mark">&lt;/&gt;</span>
+      <span class="navbar__logo-text">Ade<span class="navbar__logo-dot">.</span></span>
     </a>
 
     <nav class="navbar__menu" aria-label="Primary">
@@ -97,8 +97,8 @@ $ogImage         = asset('images/og-cover.jpg');
       <a href="<?= base_url('/#contact') ?>" class="navbar__link">Contact</a>
     </nav>
 
-    <a href="<?= base_url('/#contact') ?>" class="btn btn-outline navbar__cta magnetic" data-cursor="link">
-      Let's Talk
+    <a href="<?= base_url('/#contact') ?>" class="btn btn-gradient navbar__cta magnetic" data-cursor="link">
+      Hire Me <span class="btn__arrow">&#8599;</span>
     </a>
 
     <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false">

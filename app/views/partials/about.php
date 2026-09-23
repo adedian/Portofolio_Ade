@@ -31,22 +31,34 @@ $terminalLines = [
           understanding how a product is meant to function end to end.
         </p>
 
-        <div class="about__facts" data-reveal data-reveal-delay="180">
-          <div>
-            <div class="about__fact-label">Education</div>
-            <div class="about__fact-value">S1 Informatika, Telkom University Surabaya</div>
+        <div class="stat-cards" data-reveal data-reveal-delay="180">
+          <div class="stat-card stat-card--blue">
+            <div class="stat-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </div>
+            <div class="stat-card__value">2025</div>
+            <div class="stat-card__label">Telkom University Graduate</div>
           </div>
-          <div>
-            <div class="about__fact-label">Location</div>
-            <div class="about__fact-value">Surabaya, Indonesia</div>
+          <div class="stat-card stat-card--cyan">
+            <div class="stat-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 9l-4 4 4 4M16 9l4 4-4 4M14 6l-4 14"/></svg>
+            </div>
+            <div class="stat-card__value">3+</div>
+            <div class="stat-card__label">Projects Delivered</div>
           </div>
-          <div>
-            <div class="about__fact-label">Period</div>
-            <div class="about__fact-value">2021 — 2025</div>
+          <div class="stat-card stat-card--purple">
+            <div class="stat-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="stat-card__value">5+</div>
+            <div class="stat-card__label">Core Technologies</div>
           </div>
-          <div>
-            <div class="about__fact-label">Focus</div>
-            <div class="about__fact-value">Web Development, UI/UX, IT Systems</div>
+          <div class="stat-card stat-card--orange">
+            <div class="stat-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <div class="stat-card__value">2026</div>
+            <div class="stat-card__label">IT Staff &amp; Web Developer</div>
           </div>
         </div>
       </div>

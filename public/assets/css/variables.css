@@ -1,8 +1,8 @@
 :root {
   /* ---- surfaces ---- */
-  --color-bg: #050505;
-  --color-bg-elevated: #0d0d0d;
-  --color-bg-surface: #111111;
+  --color-bg: #07070f;
+  --color-bg-elevated: #0d0d1a;
+  --color-bg-surface: #121223;
   --color-border: rgba(255, 255, 255, 0.08);
   --color-border-strong: rgba(255, 255, 255, 0.16);
 
@@ -32,6 +32,7 @@
   --vs-purple-soft: rgba(197, 134, 192, 0.12);
   --vs-yellow-soft: rgba(220, 220, 170, 0.12);
   --gradient-accent: linear-gradient(135deg, var(--vs-blue), var(--vs-cyan));
+  --gradient-brand: linear-gradient(135deg, var(--color-accent-violet), var(--color-accent));
 
   /* ---- typography ---- */
   --font-display: 'Space Grotesk', 'Inter', -apple-system, sans-serif;

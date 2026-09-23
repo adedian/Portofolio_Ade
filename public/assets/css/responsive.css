@@ -88,6 +88,10 @@
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .project-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ==================================================
@@ -112,6 +116,10 @@
   }
 
   .about__facts {
+    grid-template-columns: 1fr;
+  }
+
+  .project-cards {
     grid-template-columns: 1fr;
   }
 

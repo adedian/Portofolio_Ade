@@ -53,7 +53,7 @@
           <div class="form-error" data-for="message"></div>
         </div>
 
-        <button type="submit" class="btn btn-primary magnetic">
+        <button type="submit" class="btn btn-gradient magnetic">
           Send Message <span class="btn__arrow">&#8599;</span>
         </button>
 

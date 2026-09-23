@@ -97,7 +97,10 @@ through `/admin`:
 - **Experience & Skills** — currently seeded via `database/schema.sql`; there's no admin UI for
   these yet (kept out of scope to avoid over-building an admin panel for a personal site with
   low edit frequency). Edit the `experiences` / `skills` tables directly, or extend
-  `AdminController` following the same pattern as `projects`.
+  `AdminController` following the same pattern as `projects`. The skills section shows a
+  progress bar per skill driven by `skills.level` (0–100) — this is a **self-rated proficiency
+  estimate**, not a verified metric, and the section copy says so; adjust the numbers in the DB
+  to match your own honest assessment.
 
 ### Adding project screenshots
 
@@ -124,15 +127,22 @@ guessed/generic image — no dependency on stock photography.
 
 ## Design system
 
-- **Background:** `#050505` / `#0d0d0d` / `#111111`
+- **Background:** `#07070f` / `#0d0d1a` / `#121223` (dark navy-black)
 - **Text:** `#f5f5f5` primary, `#a1a1aa` secondary
-- **Accent:** electric blue `#5b8cff` with a cyan/violet supporting pair — used sparingly
+- **Brand gradient:** violet → blue (`--gradient-brand`), used on the logo mark, primary CTAs,
+  the hero name and the avatar monogram
+- **Syntax accent palette:** blue/cyan/purple/orange/yellow/green (`--vs-*` variables in
+  `variables.css`), used across section labels, skill/tech chips, timeline dots and project tags
+  so the page reads as colorful rather than monochrome, without going neon
 - **Type:** Space Grotesk (display/mono-ish accents) + Inter (body), max two families
 - **Motion:** CSS transitions/keyframes + `IntersectionObserver`-driven scroll reveals, a custom
-  cursor (desktop only), magnetic buttons, a horizontal project list with hover preview, and a
-  full project case-study route per project (`/projects/{slug}`) — not a JS-only modal.
+  cursor (desktop only), magnetic buttons, a project card grid, and a full project case-study
+  route per project (`/projects/{slug}`) — not a JS-only modal.
 - All animation respects `prefers-reduced-motion`, and the custom cursor is disabled on
   coarse/touch pointers.
+- The hero's "photo" is a monogram avatar (gradient circle + "AD"), not a stock photo — there is
+  no real photo of Ade in this repo. Swap `.hero__avatar-blob` in
+  `app/views/partials/hero.php` for a real `<img>` once one is available.
 
 ## What's accurate vs. placeholder
 

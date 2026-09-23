@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS `skills` (
   `category` VARCHAR(60) NOT NULL,
   `name` VARCHAR(80) NOT NULL,
   `note` VARCHAR(255) DEFAULT NULL,
+  `level` TINYINT UNSIGNED NOT NULL DEFAULT 75 COMMENT 'self-assessed proficiency 0-100, shown as a progress bar',
   `sort_order` INT NOT NULL DEFAULT 0
 ) ENGINE=InnoDB;
 
@@ -133,30 +134,30 @@ INSERT INTO `experiences` (`type`, `role`, `organization`, `location`, `period_s
 ('education', 'Graduation', 'Telkom University Surabaya', 'Surabaya', '2025', '2025', '2025', 'Completed Bachelor degree in Informatics / Computer Science.', 'Graduation', 40),
 ('work', 'IT Staff & Web Developer', 'PT Hexa Multi Energi', 'Surabaya', 'January 2026', 'Present', '2026', 'Handling web development and maintenance, WordPress and PHP-based sites, UI design, website security (SSL, backups), server management (cPanel/hPanel), IT system monitoring and technical troubleshooting.', 'Web Development,WordPress,PHP,UI Design,Website Security,cPanel,hPanel,IT Monitoring', 50);
 
-INSERT INTO `skills` (`category`, `name`, `note`, `sort_order`) VALUES
-('Development', 'PHP', 'Server-side logic and native application structure', 1),
-('Development', 'HTML', 'Semantic markup', 2),
-('Development', 'CSS', 'Custom, systematic styling', 3),
-('Development', 'JavaScript', 'Interaction and client-side behavior', 4),
-('Development', 'MySQL', 'Relational data modeling', 5),
-('Development', 'WordPress', 'CMS-based site development', 6),
-('UI / UX', 'Figma', 'Interface design and design systems', 1),
-('UI / UX', 'Wireframing', 'Low-fidelity structure planning', 2),
-('UI / UX', 'High-Fidelity Design', 'Polished visual interfaces', 3),
-('UI / UX', 'Prototyping', 'Interactive flow validation', 4),
-('UI / UX', 'Responsive Design', 'Cross-device layout adaptation', 5),
-('Systems', 'Database Design', 'Structuring relational schemas', 1),
-('Systems', 'CRUD', 'Data operations logic', 2),
-('Systems', 'Role-Based Access', 'Permission-driven system access', 3),
-('Systems', 'Authentication', 'Secure session & login handling', 4),
-('Systems', 'Inventory Systems', 'Stock & goods-flow logic', 5),
-('Systems', 'Reporting Systems', 'Structured data output', 6),
-('Tools', 'Git', 'Version control', 1),
-('Tools', 'GitHub', 'Code hosting & collaboration', 2),
-('Tools', 'cPanel', 'Hosting management', 3),
-('Tools', 'hPanel', 'Hosting management', 4),
-('Tools', 'VS Code', 'Primary editor', 5),
-('Tools', 'XAMPP', 'Local development environment', 6);
+INSERT INTO `skills` (`category`, `name`, `note`, `level`, `sort_order`) VALUES
+('Development', 'PHP', 'Server-side logic and native application structure', 88, 1),
+('Development', 'HTML', 'Semantic markup', 92, 2),
+('Development', 'CSS', 'Custom, systematic styling', 88, 3),
+('Development', 'JavaScript', 'Interaction and client-side behavior', 80, 4),
+('Development', 'MySQL', 'Relational data modeling', 78, 5),
+('Development', 'WordPress', 'CMS-based site development', 82, 6),
+('UI / UX', 'Figma', 'Interface design and design systems', 85, 1),
+('UI / UX', 'Wireframing', 'Low-fidelity structure planning', 80, 2),
+('UI / UX', 'High-Fidelity Design', 'Polished visual interfaces', 82, 3),
+('UI / UX', 'Prototyping', 'Interactive flow validation', 78, 4),
+('UI / UX', 'Responsive Design', 'Cross-device layout adaptation', 85, 5),
+('Systems', 'Database Design', 'Structuring relational schemas', 78, 1),
+('Systems', 'CRUD', 'Data operations logic', 82, 2),
+('Systems', 'Role-Based Access', 'Permission-driven system access', 75, 3),
+('Systems', 'Authentication', 'Secure session & login handling', 75, 4),
+('Systems', 'Inventory Systems', 'Stock & goods-flow logic', 80, 5),
+('Systems', 'Reporting Systems', 'Structured data output', 78, 6),
+('Tools', 'Git', 'Version control', 80, 1),
+('Tools', 'GitHub', 'Code hosting & collaboration', 78, 2),
+('Tools', 'cPanel', 'Hosting management', 82, 3),
+('Tools', 'hPanel', 'Hosting management', 80, 4),
+('Tools', 'VS Code', 'Primary editor', 90, 5),
+('Tools', 'XAMPP', 'Local development environment', 88, 6);
 
 INSERT INTO `projects`
 (`slug`, `number`, `title`, `category`, `filter_group`, `year`, `role`, `description`, `overview`, `problem`, `approach`, `solution`, `result`, `technologies`, `features`, `thumbnail`, `is_academic`, `featured`, `sort_order`) VALUES

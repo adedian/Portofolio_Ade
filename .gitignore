@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Local environment overrides
+app/config/config.local.php
+
+# Logs
+storage/logs/*.log
+
+# Dependencies (none currently, reserved for future use)
+/vendor/
+/node_modules/

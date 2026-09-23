@@ -1,0 +1,105 @@
+/* ==================================================
+   SCROLL REVEAL (driven by IntersectionObserver in reveal.js)
+================================================== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal="scale"] {
+  transform: scale(0.96);
+}
+
+[data-reveal="scale"].is-visible {
+  transform: scale(1);
+}
+
+[data-reveal="clip"] {
+  clip-path: inset(0 0 100% 0);
+  transform: none;
+}
+
+[data-reveal="clip"].is-visible {
+  clip-path: inset(0 0 0% 0);
+}
+
+/* ==================================================
+   TEXT REVEAL (per-character/word spans)
+================================================== */
+.reveal-text {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.reveal-text__line {
+  display: block;
+  transform: translateY(110%);
+  transition: transform var(--dur-slow) var(--ease-out);
+  transition-delay: var(--line-delay, 0ms);
+}
+
+.reveal-text.is-visible .reveal-text__line {
+  transform: translateY(0);
+}
+
+/* ==================================================
+   KEYFRAMES
+================================================== */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+@keyframes scroll-line {
+  0% { top: -100%; }
+  100% { top: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes log-line {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float-node {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(6px, -10px); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.page-fade-in {
+  animation: fade-in var(--dur-base) var(--ease-out) both;
+}
+
+/* Page transition overlay */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg);
+  z-index: 8500;
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+.page-transition.is-active {
+  animation: page-out 450ms var(--ease-in-out) forwards;
+}
+
+@keyframes page-out {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0%); }
+}

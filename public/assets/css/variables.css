@@ -34,6 +34,12 @@
   --gradient-accent: linear-gradient(135deg, var(--vs-blue), var(--vs-cyan));
   --gradient-brand: linear-gradient(135deg, var(--color-accent-violet), var(--color-accent));
 
+  /* ---- glassmorphism (cards) ---- */
+  --glass-bg: rgba(30, 30, 54, 0.45);
+  --glass-bg-soft: rgba(30, 30, 54, 0.3);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(20px);
+
   /* ---- typography ---- */
   --font-display: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;

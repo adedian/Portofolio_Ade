@@ -76,6 +76,7 @@ $ogImage         = asset('images/og-cover.jpg');
   <div class="preloader__count">000</div>
 </div>
 
+<div class="bg-texture" aria-hidden="true"></div>
 <div class="noise-overlay" aria-hidden="true"></div>
 <div class="page-transition" aria-hidden="true"></div>
 

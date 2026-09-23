@@ -81,6 +81,74 @@
     el.style.animationDelay = (i * 140) + 'ms';
   });
 
+  /* ---------------- Stat card number count-up ---------------- */
+  document.querySelectorAll('.stat-card__value').forEach(function (el) {
+    var match = el.textContent.trim().match(/^(\d+)(.*)$/);
+    if (!match) return;
+
+    var target = parseInt(match[1], 10);
+    var suffix = match[2];
+
+    if (reduced) return;
+
+    el.textContent = '0' + suffix;
+
+    function animateCount() {
+      var start = null;
+      var duration = 1200;
+      function step(ts) {
+        if (!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target) + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target + suffix;
+          el.style.animation = 'count-pop 0.4s var(--ease-out)';
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCount();
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.5 });
+      obs.observe(el);
+    } else {
+      el.textContent = target + suffix;
+    }
+  });
+
+  /* ---------------- Project card 3D tilt ---------------- */
+  if (!reduced && window.matchMedia('(pointer: fine)').matches) {
+    document.querySelectorAll('.project-card').forEach(function (card) {
+      var thumb = card.querySelector('.project-card__thumb');
+
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform =
+          'perspective(800px) rotateY(' + (x * 10) + 'deg) rotateX(' + (-y * 10) + 'deg) translateY(-4px)';
+        if (thumb) {
+          thumb.style.transform = 'translateZ(20px)';
+        }
+      });
+
+      card.addEventListener('mouseleave', function () {
+        card.style.transform = '';
+        if (thumb) thumb.style.transform = '';
+      });
+    });
+  }
+
   /* ---------------- Page transition on internal navigation ---------------- */
   var overlay = document.querySelector('.page-transition');
 

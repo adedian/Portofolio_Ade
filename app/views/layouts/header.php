@@ -80,6 +80,8 @@ $ogImage         = asset('images/og-cover.jpg');
 <div class="noise-overlay" aria-hidden="true"></div>
 <div class="page-transition" aria-hidden="true"></div>
 
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__fill"></div></div>
+
 <header class="navbar">
   <div class="container navbar__inner">
     <a href="<?= base_url('/') ?>" class="navbar__logo">

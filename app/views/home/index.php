@@ -1,6 +1,7 @@
 <?php require __DIR__ . '/../layouts/header.php'; ?>
 
 <?php require __DIR__ . '/../partials/hero.php'; ?>
+<?php require __DIR__ . '/../partials/marquee.php'; ?>
 
 <section id="system-log" aria-label="System status">
   <div class="container">

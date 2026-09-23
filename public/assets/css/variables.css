@@ -32,7 +32,7 @@
   --vs-purple-soft: rgba(197, 134, 192, 0.12);
   --vs-yellow-soft: rgba(220, 220, 170, 0.12);
   --gradient-accent: linear-gradient(135deg, var(--vs-blue), var(--vs-cyan));
-  --gradient-brand: linear-gradient(135deg, var(--color-accent-violet), var(--color-accent));
+  --gradient-brand: linear-gradient(135deg, var(--color-accent-violet), var(--color-accent), var(--vs-cyan), var(--color-accent-violet));
 
   /* ---- glassmorphism (cards) ---- */
   --glass-bg: rgba(30, 30, 54, 0.45);

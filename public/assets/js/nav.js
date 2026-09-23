@@ -3,12 +3,21 @@
   var toggle = document.querySelector('.navbar__toggle');
   var mobileMenu = document.querySelector('.mobile-menu');
 
-  if (navbar) {
+  var progressFill = document.querySelector('.scroll-progress__fill');
+
+  if (navbar || progressFill) {
     var onScroll = function () {
-      navbar.classList.toggle('is-scrolled', window.scrollY > 24);
+      if (navbar) navbar.classList.toggle('is-scrolled', window.scrollY > 24);
+      if (progressFill) {
+        var doc = document.documentElement;
+        var max = doc.scrollHeight - doc.clientHeight;
+        var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+        progressFill.style.width = pct + '%';
+      }
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
   }
 
   if (toggle && mobileMenu) {

@@ -144,6 +144,22 @@
   border-bottom-color: var(--color-border);
 }
 
+.navbar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: var(--gradient-accent);
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+.navbar.is-scrolled::after {
+  opacity: 0.5;
+}
+
 .navbar__inner {
   display: flex;
   align-items: center;
@@ -304,8 +320,8 @@
 }
 
 .btn-primary:hover {
-  background: var(--color-accent);
-  color: var(--color-text-primary);
+  background: var(--gradient-accent);
+  color: #050505;
 }
 
 .btn-outline {
@@ -492,6 +508,13 @@
   background: var(--color-border-strong);
 }
 
+.code-window__bar .code-window__dot:nth-child(1),
+.terminal__bar .code-window__dot:nth-child(1) { background: #ff5f57; }
+.code-window__bar .code-window__dot:nth-child(2),
+.terminal__bar .code-window__dot:nth-child(2) { background: #febc2e; }
+.code-window__bar .code-window__dot:nth-child(3),
+.terminal__bar .code-window__dot:nth-child(3) { background: #28c840; }
+
 .code-window__title {
   margin-left: var(--space-3);
   font-family: var(--font-mono);
@@ -507,12 +530,13 @@
   overflow-x: auto;
 }
 
-.code-window__body .tok-kw { color: #ff7ab2; }
-.code-window__body .tok-type { color: var(--color-accent-2); }
-.code-window__body .tok-fn { color: var(--color-accent); }
-.code-window__body .tok-str { color: #a3e635; }
-.code-window__body .tok-com { color: var(--color-text-muted); }
+.code-window__body .tok-kw { color: var(--vs-pink); }
+.code-window__body .tok-type { color: var(--vs-cyan); }
+.code-window__body .tok-fn { color: var(--vs-yellow); }
+.code-window__body .tok-str { color: var(--vs-orange); }
+.code-window__body .tok-com { color: var(--vs-green); }
 .code-window__body .tok-var { color: var(--color-text-primary); }
+.code-window__body .tok-punct { color: var(--color-text-secondary); }
 
 /* ==================================================
    MARQUEE-LESS DIVIDER / SYSTEM LOG
@@ -687,6 +711,27 @@
   box-shadow: 0 0 10px var(--color-accent);
 }
 
+.timeline__item[data-type="education"].is-visible::before {
+  border-color: var(--vs-cyan);
+  background: var(--vs-cyan);
+  box-shadow: 0 0 10px var(--vs-cyan);
+}
+.timeline__item[data-type="education"] .timeline__year { color: var(--vs-cyan); }
+
+.timeline__item[data-type="organization"].is-visible::before {
+  border-color: var(--vs-purple);
+  background: var(--vs-purple);
+  box-shadow: 0 0 10px var(--vs-purple);
+}
+.timeline__item[data-type="organization"] .timeline__year { color: var(--vs-purple); }
+
+.timeline__item[data-type="work"].is-visible::before {
+  border-color: var(--vs-orange);
+  background: var(--vs-orange);
+  box-shadow: 0 0 10px var(--vs-orange);
+}
+.timeline__item[data-type="work"] .timeline__year { color: var(--vs-orange); }
+
 .timeline__year {
   font-family: var(--font-mono);
   color: var(--color-accent);
@@ -739,6 +784,11 @@
   background: var(--color-accent-soft);
 }
 
+.project-filter[data-filter="WEB"].is-active    { border-color: var(--vs-blue);   background: var(--vs-blue-soft); }
+.project-filter[data-filter="SYSTEM"].is-active { border-color: var(--vs-cyan);   background: var(--vs-cyan-soft); }
+.project-filter[data-filter="UIUX"].is-active   { border-color: var(--vs-purple); background: var(--vs-purple-soft); }
+.project-filter[data-filter="AI"].is-active     { border-color: var(--vs-orange); background: var(--vs-orange-soft); }
+
 .project-list {
   display: flex;
   flex-direction: column;
@@ -784,6 +834,20 @@
   font-size: 0.875rem;
 }
 
+.project-row__number {
+  transition: color var(--dur-base) var(--ease-out);
+}
+
+.project-row[data-group="WEB"] .project-row__number    { color: var(--vs-blue); }
+.project-row[data-group="SYSTEM"] .project-row__number  { color: var(--vs-cyan); }
+.project-row[data-group="UIUX"] .project-row__number    { color: var(--vs-purple); }
+.project-row[data-group="AI"] .project-row__number      { color: var(--vs-orange); }
+
+.project-row[data-group="WEB"]:hover .project-row__title    { color: var(--vs-blue); }
+.project-row[data-group="SYSTEM"]:hover .project-row__title { color: var(--vs-cyan); }
+.project-row[data-group="UIUX"]:hover .project-row__title   { color: var(--vs-purple); }
+.project-row[data-group="AI"]:hover .project-row__title     { color: var(--vs-orange); }
+
 .project-row__tags {
   display: flex;
   flex-wrap: wrap;
@@ -798,7 +862,13 @@
   border: 1px solid var(--color-border);
   padding: 0.3rem 0.65rem;
   border-radius: 999px;
+  transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
 }
+
+.project-row[data-group="WEB"]:hover .project-row__tag    { border-color: rgba(86, 156, 214, 0.4); color: var(--vs-blue); }
+.project-row[data-group="SYSTEM"]:hover .project-row__tag  { border-color: rgba(78, 201, 176, 0.4); color: var(--vs-cyan); }
+.project-row[data-group="UIUX"]:hover .project-row__tag    { border-color: rgba(197, 134, 192, 0.4); color: var(--vs-purple); }
+.project-row[data-group="AI"]:hover .project-row__tag      { border-color: rgba(206, 145, 120, 0.4); color: var(--vs-orange); }
 
 .project-row__cta {
   display: inline-flex;
@@ -935,6 +1005,16 @@
   margin-top: 0.35rem;
 }
 
+[data-skill-category="blue"] .skill-category__title   { color: var(--vs-blue); border-color: rgba(86, 156, 214, 0.25); }
+[data-skill-category="purple"] .skill-category__title { color: var(--vs-purple); border-color: rgba(197, 134, 192, 0.25); }
+[data-skill-category="cyan"] .skill-category__title   { color: var(--vs-cyan); border-color: rgba(78, 201, 176, 0.25); }
+[data-skill-category="orange"] .skill-category__title { color: var(--vs-orange); border-color: rgba(206, 145, 120, 0.25); }
+
+[data-skill-category="blue"] .skill-item:hover .skill-item__name   { color: var(--vs-blue); }
+[data-skill-category="purple"] .skill-item:hover .skill-item__name { color: var(--vs-purple); }
+[data-skill-category="cyan"] .skill-item:hover .skill-item__name   { color: var(--vs-cyan); }
+[data-skill-category="orange"] .skill-item:hover .skill-item__name { color: var(--vs-orange); }
+
 /* ==================================================
    TECH STACK ECOSYSTEM
 ================================================== */
@@ -966,6 +1046,22 @@
   border-color: var(--color-accent);
   color: var(--color-accent);
 }
+
+.tech-node[data-tech="figma"]      { color: var(--vs-orange); border-color: rgba(206, 145, 120, 0.35); }
+.tech-node[data-tech="javascript"] { color: var(--vs-yellow); border-color: rgba(220, 220, 170, 0.35); }
+.tech-node[data-tech="php"]        { color: var(--vs-purple); border-color: rgba(197, 134, 192, 0.35); }
+.tech-node[data-tech="github"]     { color: var(--color-text-secondary); border-color: var(--color-border-strong); }
+.tech-node[data-tech="mysql"]      { color: var(--vs-blue); border-color: rgba(86, 156, 214, 0.35); }
+.tech-node[data-tech="wordpress"]  { color: var(--vs-cyan); border-color: rgba(78, 201, 176, 0.35); }
+.tech-node[data-tech="htmlcss"]    { color: var(--vs-orange); border-color: rgba(206, 145, 120, 0.35); }
+
+.tech-node[data-tech="figma"]:hover      { border-color: var(--vs-orange); background: var(--vs-orange-soft); }
+.tech-node[data-tech="javascript"]:hover { border-color: var(--vs-yellow); background: var(--vs-yellow-soft); }
+.tech-node[data-tech="php"]:hover        { border-color: var(--vs-purple); background: var(--vs-purple-soft); }
+.tech-node[data-tech="github"]:hover     { border-color: var(--color-text-primary); color: var(--color-text-primary); }
+.tech-node[data-tech="mysql"]:hover      { border-color: var(--vs-blue); background: var(--vs-blue-soft); }
+.tech-node[data-tech="wordpress"]:hover  { border-color: var(--vs-cyan); background: var(--vs-cyan-soft); }
+.tech-node[data-tech="htmlcss"]:hover    { border-color: var(--vs-orange); background: var(--vs-orange-soft); }
 
 .tech-node--center {
   top: 50%;
@@ -1000,8 +1096,9 @@
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-accent-violet);
-  border: 1px solid var(--color-border);
+  color: var(--vs-orange);
+  border: 1px solid rgba(206, 145, 120, 0.35);
+  background: var(--vs-orange-soft);
   padding: 0.4rem 0.85rem;
   border-radius: 999px;
   margin-bottom: var(--space-4);
@@ -1031,6 +1128,11 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   align-content: flex-start;
+}
+
+.academic__stack .project-row__tag {
+  color: var(--vs-orange);
+  border-color: rgba(206, 145, 120, 0.3);
 }
 
 /* ==================================================

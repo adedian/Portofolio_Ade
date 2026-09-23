@@ -34,11 +34,11 @@ $features = lines_to_array($project['features']);
   <div class="container">
     <div class="grid grid-2" style="gap: var(--space-16);">
       <div data-reveal>
-        <div class="section-eyebrow">Overview</div>
+        <div class="section-eyebrow section-eyebrow--blue">Overview</div>
         <p class="section-desc" style="font-size: 1.0625rem; max-width: 60ch;"><?= e($project['overview']) ?></p>
       </div>
       <div data-reveal data-reveal-delay="80">
-        <div class="section-eyebrow">Technology</div>
+        <div class="section-eyebrow section-eyebrow--cyan">Technology</div>
         <div class="project-row__tags">
           <?php foreach ($techs as $tag): ?>
             <span class="project-row__tag"><?= e($tag) ?></span>
@@ -52,15 +52,15 @@ $features = lines_to_array($project['features']);
 <section class="hairline" style="padding-block: var(--space-16);">
   <div class="container grid grid-3" style="gap: var(--space-12);">
     <div data-reveal>
-      <div class="section-eyebrow">Challenge</div>
+      <div class="section-eyebrow section-eyebrow--orange">Challenge</div>
       <p class="text-secondary"><?= e($project['problem']) ?></p>
     </div>
     <div data-reveal data-reveal-delay="80">
-      <div class="section-eyebrow">Approach</div>
+      <div class="section-eyebrow section-eyebrow--purple">Approach</div>
       <p class="text-secondary"><?= e($project['approach']) ?></p>
     </div>
     <div data-reveal data-reveal-delay="160">
-      <div class="section-eyebrow">Solution</div>
+      <div class="section-eyebrow section-eyebrow--cyan">Solution</div>
       <p class="text-secondary"><?= e($project['solution']) ?></p>
     </div>
   </div>
@@ -69,11 +69,15 @@ $features = lines_to_array($project['features']);
 <?php if (!empty($features)): ?>
 <section class="hairline">
   <div class="container">
-    <div class="section-eyebrow" data-reveal>Key Features</div>
+    <div class="section-eyebrow section-eyebrow--yellow" data-reveal>Key Features</div>
     <div class="grid grid-3" style="margin-top: var(--space-8);">
-      <?php foreach ($features as $i => $feature): ?>
-        <div data-reveal data-reveal-delay="<?= ($i % 3) * 80 ?>" style="border-top:1px solid var(--color-border); padding-top: var(--space-4);">
-          <span class="mono text-muted" style="font-size:0.8125rem;"><?= str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) ?></span>
+      <?php
+      $featureColors = ['var(--vs-blue)', 'var(--vs-cyan)', 'var(--vs-purple)', 'var(--vs-orange)'];
+      foreach ($features as $i => $feature):
+          $color = $featureColors[$i % count($featureColors)];
+      ?>
+        <div data-reveal data-reveal-delay="<?= ($i % 3) * 80 ?>" style="border-top:2px solid <?= $color ?>; padding-top: var(--space-4);">
+          <span class="mono" style="font-size:0.8125rem; color:<?= $color ?>;"><?= str_pad((string)($i + 1), 2, '0', STR_PAD_LEFT) ?></span>
           <p style="margin-top: var(--space-2);"><?= e($feature) ?></p>
         </div>
       <?php endforeach; ?>
@@ -84,14 +88,14 @@ $features = lines_to_array($project['features']);
 
 <section class="hairline">
   <div class="container">
-    <div class="section-eyebrow" data-reveal>Result</div>
+    <div class="section-eyebrow section-eyebrow--green" data-reveal>Result</div>
     <p class="section-desc" style="font-size: 1.0625rem; max-width: 64ch;" data-reveal><?= e($project['result']) ?></p>
   </div>
 </section>
 
 <section class="hairline">
   <div class="container">
-    <div class="section-eyebrow" data-reveal>Gallery</div>
+    <div class="section-eyebrow section-eyebrow--blue" data-reveal>Gallery</div>
 
     <?php if (!empty($images)): ?>
       <div class="gallery-grid" data-reveal>

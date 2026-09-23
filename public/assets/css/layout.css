@@ -31,6 +31,14 @@ section {
   margin-bottom: var(--space-4);
 }
 
+/* Each section gets its own accent, like syntax-highlighted tokens in an editor */
+.section-eyebrow--blue   { color: var(--vs-blue); }
+.section-eyebrow--cyan   { color: var(--vs-cyan); }
+.section-eyebrow--purple { color: var(--vs-purple); }
+.section-eyebrow--orange { color: var(--vs-orange); }
+.section-eyebrow--yellow { color: var(--vs-yellow); }
+.section-eyebrow--green  { color: var(--vs-green); }
+
 .section-eyebrow::before {
   content: '';
   width: 6px;

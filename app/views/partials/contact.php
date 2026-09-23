@@ -2,7 +2,7 @@
   <div class="container">
     <div class="contact__grid">
       <div data-reveal>
-        <div class="section-eyebrow">07 — Contact</div>
+        <div class="section-eyebrow section-eyebrow--blue">07 — Contact</div>
         <h2 class="contact__title">Let's build<br>something useful.</h2>
         <p class="section-desc" style="margin-top: var(--space-6);">
           Have a project, idea, or opportunity? Let's talk.

@@ -11,7 +11,7 @@ $filterLabels = [
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="section-eyebrow" data-reveal>03 — Selected Work</div>
+        <div class="section-eyebrow section-eyebrow--cyan" data-reveal>03 — Selected Work</div>
         <h2 class="section-title" data-reveal>Selected Projects</h2>
       </div>
 

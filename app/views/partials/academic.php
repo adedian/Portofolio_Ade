@@ -13,7 +13,7 @@ $academicTags = tags_to_array($academicProject['technologies']);
 ?>
 <section id="academic-project">
   <div class="container">
-    <div class="section-eyebrow" data-reveal>06 — Academic Project</div>
+    <div class="section-eyebrow section-eyebrow--green" data-reveal>06 — Academic Project</div>
 
     <div class="academic" data-reveal>
       <div>

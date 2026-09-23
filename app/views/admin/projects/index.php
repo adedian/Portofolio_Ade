@@ -13,7 +13,7 @@
         <tr>
           <td class="mono text-muted"><?= e($p['number']) ?></td>
           <td><?= e($p['title']) ?></td>
-          <td><span class="badge"><?= e($p['filter_group']) ?></span></td>
+          <td><span class="badge" data-group="<?= e($p['filter_group']) ?>"><?= e($p['filter_group']) ?></span></td>
           <td><?= $p['featured'] ? 'Yes' : 'No' ?></td>
           <td style="display:flex; gap: var(--space-2);">
             <a href="<?= base_url('admin/projects/' . $p['id'] . '/edit') ?>" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.8125rem;">Edit</a>

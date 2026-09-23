@@ -15,7 +15,7 @@ $terminalLines = [
 ?>
 <section id="about">
   <div class="container">
-    <div class="section-eyebrow" data-reveal>01 — About</div>
+    <div class="section-eyebrow section-eyebrow--blue" data-reveal>01 — About</div>
 
     <div class="about__grid">
       <div>

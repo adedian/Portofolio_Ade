@@ -2,7 +2,7 @@
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="section-eyebrow" data-reveal>02 — Journey</div>
+        <div class="section-eyebrow section-eyebrow--purple" data-reveal>02 — Journey</div>
         <h2 class="section-title" data-reveal>Experience &amp; Education</h2>
       </div>
       <p class="section-desc" data-reveal>
@@ -15,7 +15,7 @@
       <div class="timeline__track"><div class="timeline__track-fill"></div></div>
 
       <?php foreach ($experiences as $item): ?>
-        <div class="timeline__item" data-reveal>
+        <div class="timeline__item" data-type="<?= e($item['type']) ?>" data-reveal>
           <div class="timeline__year"><?= e($item['year_marker']) ?></div>
           <div class="timeline__role"><?= e($item['role']) ?></div>
           <div class="timeline__org">

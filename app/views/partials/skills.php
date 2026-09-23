@@ -1,8 +1,16 @@
+<?php
+$categoryColors = [
+    'Development' => 'blue',
+    'UI / UX'     => 'purple',
+    'Systems'     => 'cyan',
+    'Tools'       => 'orange',
+];
+?>
 <section id="skills">
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="section-eyebrow" data-reveal>04 — Capabilities</div>
+        <div class="section-eyebrow section-eyebrow--orange" data-reveal>04 — Capabilities</div>
         <h2 class="section-title" data-reveal>Skills</h2>
       </div>
       <p class="section-desc" data-reveal>
@@ -12,7 +20,7 @@
 
     <div class="skills__grid">
       <?php foreach ($skills as $category => $items): ?>
-        <div data-reveal>
+        <div data-reveal data-skill-category="<?= e($categoryColors[$category] ?? 'blue') ?>">
           <div class="skill-category__title"><?= e($category) ?></div>
           <?php foreach ($items as $skill): ?>
             <div class="skill-item">

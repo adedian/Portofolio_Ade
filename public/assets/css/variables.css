@@ -17,6 +17,22 @@
   --color-accent-violet: #8b7cf6;
   --color-accent-soft: rgba(91, 140, 255, 0.12);
 
+  /* ---- VS Code–inspired syntax palette (used sparingly as UI accents) ---- */
+  --vs-blue: #569cd6;
+  --vs-cyan: #4ec9b0;
+  --vs-orange: #ce9178;
+  --vs-purple: #c586c0;
+  --vs-yellow: #dcdcaa;
+  --vs-green: #6a9955;
+  --vs-red: #f44747;
+  --vs-pink: #ff7ab2;
+  --vs-blue-soft: rgba(86, 156, 214, 0.12);
+  --vs-cyan-soft: rgba(78, 201, 176, 0.12);
+  --vs-orange-soft: rgba(206, 145, 120, 0.12);
+  --vs-purple-soft: rgba(197, 134, 192, 0.12);
+  --vs-yellow-soft: rgba(220, 220, 170, 0.12);
+  --gradient-accent: linear-gradient(135deg, var(--vs-blue), var(--vs-cyan));
+
   /* ---- typography ---- */
   --font-display: 'Space Grotesk', 'Inter', -apple-system, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;

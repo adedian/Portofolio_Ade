@@ -26,7 +26,11 @@
     }
   }
 
+  var finished = false;
+
   function finish() {
+    if (finished) return;
+    finished = true;
     document.body.classList.remove('is-loading');
     preloader.classList.add('is-hidden');
     document.dispatchEvent(new CustomEvent('portfolio:loaded'));
@@ -53,4 +57,10 @@
   setTimeout(function () {
     setTarget(100);
   }, 1800);
+
+  // Hard fallback: requestAnimationFrame is paused by some browsers while the
+  // tab/page is backgrounded, which would otherwise leave the preloader (and
+  // the "is-loading" state) stuck indefinitely. setTimeout keeps firing
+  // regardless, so this guarantees the page always becomes usable.
+  setTimeout(finish, 3500);
 })();

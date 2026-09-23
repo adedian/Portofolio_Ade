@@ -83,12 +83,26 @@
 
   /* ---------------- Page transition on internal navigation ---------------- */
   var overlay = document.querySelector('.page-transition');
+
+  // Safety net: if the browser restores this page from bfcache (e.g. via the
+  // back/forward buttons) right after the overlay was activated for an outgoing
+  // navigation, the class would otherwise survive the restore and leave the page
+  // permanently covered until a manual refresh.
+  window.addEventListener('pageshow', function () {
+    if (overlay) overlay.classList.remove('is-active');
+  });
+
   if (overlay && !reduced) {
     document.querySelectorAll('a[href]').forEach(function (link) {
       var href = link.getAttribute('href');
       if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
       if (link.target === '_blank') return;
       if (link.origin && link.origin !== window.location.origin) return;
+
+      // Same-page anchor (e.g. "/site/#about" while already on "/site/"): this is a
+      // same-document scroll, not a real navigation, so the browser never reloads and
+      // never removes the overlay class again. Let it scroll natively instead.
+      if (link.pathname === window.location.pathname) return;
 
       link.addEventListener('click', function (e) {
         e.preventDefault();
